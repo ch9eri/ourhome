@@ -16,7 +16,13 @@ const Background = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
-const Children = styled.div``;
+const Children = styled.div`
+  width: 80vw;
+  background-color: pink;
+`;
 
 export default Layout;

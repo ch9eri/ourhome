@@ -15,6 +15,7 @@ const Item = () => {
 
 const ItemContainer = styled.div`
   width: 284px;
+  margin: 10px 10px;
 `;
 const Num = styled.div``;
 const Img = styled.img`
