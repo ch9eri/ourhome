@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Item = () => {
+const Item = ({ item }) => {
   return (
     <ItemContainer>
-      <Num>1</Num>
-      <Img src="https://mall.ourhome.co.kr//attach_file/20201118/C4A1610E7468407FA935CBF8DE2164DF.jpg" />
-      <Name>★연말세일★ 진한 사골곰탕 300g</Name>
-      <Desc>100% 사골로 고은 진한 사골곰탕</Desc>
-      <Price>880원</Price>
+      <Num>{item.id}</Num>
+      <Img src={item.src} />
+      <Name>{item.name}</Name>
+      <Desc>{item.desc}</Desc>
+      <Price>{item.price}</Price>
     </ItemContainer>
   );
 };

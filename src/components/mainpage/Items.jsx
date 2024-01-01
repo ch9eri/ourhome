@@ -1,16 +1,14 @@
 import React from 'react';
 import Item from './Item';
 import styled from 'styled-components';
+import items from '../../data/items.json';
 
 const Items = () => {
   return (
     <ItemsContainer>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      {items.map((item) => (
+        <Item item={item} />
+      ))}
     </ItemsContainer>
   );
 };
