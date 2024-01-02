@@ -21,6 +21,7 @@ const Background = styled.div`
 `;
 const Children = styled.div`
   width: 80vw;
+  margin-bottom: 100px;
 `;
 
 export default Layout;

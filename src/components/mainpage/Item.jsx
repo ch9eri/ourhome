@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { PiShoppingCartBold, PiHeartBold } from 'react-icons/pi';
+import { PiShoppingCart, PiHeart } from 'react-icons/pi';
 import { IoBagAddOutline } from 'react-icons/io5';
 import { useRecoilState } from 'recoil';
 import { cartListState } from '../../state';
-import { LIGHTGRAY } from '../../css/theme';
+import { LIGHTGRAY, DARKGRAY } from '../../css/theme';
 
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -51,20 +51,20 @@ const Item = ({ item }) => {
 
   return (
     <ItemContainer onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <Num>{item.id <= 9 ? '0' + item.id : item.id}</Num>
       {isHovering && (
         <Modal>
-          <PiShoppingCartBold
-            size={40}
+          <PiShoppingCart
+            size={30}
             className="hover"
             onClick={() => {
               onAddCart(item);
             }}
           />
-          <PiHeartBold size={40} className="hover" />
-          <IoBagAddOutline size={40} className="hover" />
+          <PiHeart size={30} className="hover" />
+          <IoBagAddOutline size={30} className="hover" />
         </Modal>
       )}
-      <Num>{item.id}</Num>
       <Img src={item.src} />
       <Name>{item.name}</Name>
       <Desc>{item.desc}</Desc>
@@ -74,12 +74,19 @@ const Item = ({ item }) => {
 };
 
 const Modal = styled.div`
+  position: absolute;
+  top: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 284px;
+
   .hover {
-    background-color: red;
-    margin: 0px 10px;
+    background-color: ${LIGHTGRAY};
+    opacity: 0.8;
+    margin: 0px 7px;
+    padding: 10px;
+    border-radius: 50px;
     &:hover {
       cursor: pointer;
     }
@@ -88,17 +95,38 @@ const Modal = styled.div`
 
 const ItemContainer = styled.div`
   width: 284px;
-  margin: 10px 10px;
-  background-color: yellow;
+  height: 430px;
+  margin: 20px 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
-const Num = styled.div``;
+const Num = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+  height: 43px;
+`;
 const Img = styled.img`
   width: 284px;
   height: 284px;
   border: 1px solid ${LIGHTGRAY};
+  margin-bottom: 5px;
 `;
-const Name = styled.div``;
-const Desc = styled.div``;
-const Price = styled.div``;
+const Name = styled.div`
+  font-size: 20px;
+  height: 25px;
+  font-weight: 500;
+`;
+
+const Desc = styled.div`
+  font-size: 14px;
+  height: 21px;
+  color: ${DARKGRAY};
+`;
+const Price = styled.div`
+  font-size: 28px;
+  font-weight: 700;
+`;
 
 export default Item;

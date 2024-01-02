@@ -21,7 +21,7 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.div`
-  width: 100%;
+  width: 80vw;
   height: 100px;
   display: flex;
   align-items: center;
@@ -30,14 +30,12 @@ const HeaderContainer = styled.div`
 const LogoImg = styled.img`
   height: 40px;
   margin-right: auto;
-  margin-left: 100px;
   &:hover {
     cursor: pointer;
   }
 `;
 
 const CartIcon = styled(PiShoppingCartBold)`
-  margin-right: 200px;
   &:hover {
     cursor: pointer;
   }

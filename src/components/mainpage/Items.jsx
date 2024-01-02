@@ -15,7 +15,7 @@ const Items = () => {
 
 const ItemsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;
 

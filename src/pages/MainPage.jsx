@@ -12,6 +12,10 @@ const MainPage = () => {
   );
 };
 
-const Title = styled.div``;
+const Title = styled.div`
+  font-size: 28px;
+  font-weight: 700;
+  margin: 18px 0px;
+`;
 
 export default MainPage;
