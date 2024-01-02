@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import CartItem from '../components/listpage/CartItem';
@@ -8,7 +8,7 @@ import { cartListState } from '../state';
 import { LIGHTGRAY } from '../css/theme';
 
 const ListPage = () => {
-  const [cartList, setCartList] = useRecoilState(cartListState);
+  const [cartList] = useRecoilState(cartListState);
 
   return (
     <Layout>

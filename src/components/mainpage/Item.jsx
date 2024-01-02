@@ -9,11 +9,7 @@ import { LIGHTGRAY, DARKGRAY } from '../../css/theme';
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [cartList, setCartList] = useRecoilState(cartListState);
-  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
-
-  useEffect(() => {
-    console.log(cartList);
-  }, [cartList]);
+  const [,setIsModalOpen] = useRecoilState(isModalOpenState);
 
   const handleMouseOver = () => {
     setIsHovering(true);

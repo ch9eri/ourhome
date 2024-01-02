@@ -7,7 +7,7 @@ import { isModalOpenState } from '../state';
 import Modal from '../components/mainpage/Modal';
 
 const MainPage = () => {
-  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
+  const [isModalOpen] = useRecoilState(isModalOpenState);
 
   return (
     <>

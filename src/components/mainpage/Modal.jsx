@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { isModalOpenState } from '../../state';
 import { useNavigate } from 'react-router-dom';
-import { DARKGRAY } from '../../css/theme';
 
 const Modal = () => {
-  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
+  const [,setIsModalOpen] = useRecoilState(isModalOpenState);
   const navigate = useNavigate();
 
   return (

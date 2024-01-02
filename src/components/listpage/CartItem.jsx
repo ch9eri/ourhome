@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { totalPriceState, cartListState } from '../../state';
+import { cartListState } from '../../state';
 import { useRecoilState } from 'recoil';
 import { LIGHTGRAY } from '../../css/theme';
 
 const CartItem = ({ citem }) => {
-  const [cartList, setCartList] = useRecoilState(cartListState);
+  const [,setCartList] = useRecoilState(cartListState);
 
   const onHandlePlus = () => {
     setCartList((prevCartList) =>
