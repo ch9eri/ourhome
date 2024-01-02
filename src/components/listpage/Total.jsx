@@ -39,6 +39,8 @@ const TotalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fafafa;
+
   .char {
     margin: 0px 10px;
     color: gray;

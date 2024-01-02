@@ -2,13 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Items from '../components/mainpage/Items';
+import { useRecoilState } from 'recoil';
+import { isModalOpenState } from '../state';
+import Modal from '../components/mainpage/Modal';
 
 const MainPage = () => {
+  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
+
   return (
-    <Layout>
-      <Title>카테고리 베스트</Title>
-      <Items />
-    </Layout>
+    <>
+      {isModalOpen && <Modal />}
+      <Layout>
+        <Title>카테고리 베스트</Title>
+        <Items />
+      </Layout>
+    </>
   );
 };
 

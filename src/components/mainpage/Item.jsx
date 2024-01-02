@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { PiShoppingCart, PiHeart } from 'react-icons/pi';
 import { IoBagAddOutline } from 'react-icons/io5';
 import { useRecoilState } from 'recoil';
-import { cartListState } from '../../state';
+import { cartListState, isModalOpenState } from '../../state';
 import { LIGHTGRAY, DARKGRAY } from '../../css/theme';
 
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [cartList, setCartList] = useRecoilState(cartListState);
+  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
 
   useEffect(() => {
     console.log(cartList);
@@ -53,17 +54,18 @@ const Item = ({ item }) => {
     <ItemContainer onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <Num>{item.id <= 9 ? '0' + item.id : item.id}</Num>
       {isHovering && (
-        <Modal>
+        <Hover>
           <PiShoppingCart
             size={30}
             className="hover"
             onClick={() => {
               onAddCart(item);
+              setIsModalOpen(true);
             }}
           />
           <PiHeart size={30} className="hover" />
           <IoBagAddOutline size={30} className="hover" />
-        </Modal>
+        </Hover>
       )}
       <Img src={item.src} />
       <Name>{item.name}</Name>
@@ -73,7 +75,7 @@ const Item = ({ item }) => {
   );
 };
 
-const Modal = styled.div`
+const Hover = styled.div`
   position: absolute;
   top: 260px;
   display: flex;
