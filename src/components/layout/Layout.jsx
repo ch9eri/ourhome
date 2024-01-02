@@ -21,7 +21,6 @@ const Background = styled.div`
 `;
 const Children = styled.div`
   width: 80vw;
-  background-color: pink;
 `;
 
 export default Layout;

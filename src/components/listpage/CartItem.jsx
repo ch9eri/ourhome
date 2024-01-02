@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const CartItem = () => {
+  const [cartList, setCartList] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {}, []);
+
   return <CartItemContainer></CartItemContainer>;
 };
 

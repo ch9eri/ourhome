@@ -20,19 +20,22 @@ const ListPage = () => {
   );
 };
 
-const Title = styled.div``;
+const Title = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  margin: 18px 0px;
+`;
 const SubContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 70px;
   background-color: #fafafa;
-  border-top: 2px solid black;
+  border-top: 1px solid black;
   border-bottom: 1px solid gray;
 `;
 const SubTitle = styled.div`
   width: 136px;
-  background-color: skyblue;
   text-align: center;
   font-size: 14px;
 `;

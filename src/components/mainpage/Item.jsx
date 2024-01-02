@@ -65,7 +65,6 @@ const Item = ({ item }) => {
 };
 
 const Modal = styled.div`
-  background-color: skyblue;
   display: flex;
   justify-content: center;
   align-items: center;

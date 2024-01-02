@@ -25,7 +25,6 @@ const HeaderContainer = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
-  background-color: blue;
 `;
 
 const LogoImg = styled.img`
