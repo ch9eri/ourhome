@@ -5,6 +5,7 @@ import CartItem from '../components/listpage/CartItem';
 import Total from '../components/listpage/Total';
 import { useRecoilState } from 'recoil';
 import { cartListState } from '../state';
+import { LIGHTGRAY } from '../css/theme';
 
 const ListPage = () => {
   const [cartList, setCartList] = useRecoilState(cartListState);
@@ -37,7 +38,7 @@ const SubContainer = styled.div`
   height: 70px;
   background-color: #fafafa;
   border-top: 1px solid black;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid ${LIGHTGRAY};
 `;
 const SubTitle = styled.div`
   width: 20%;

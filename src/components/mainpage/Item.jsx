@@ -4,6 +4,7 @@ import { PiShoppingCartBold, PiHeartBold } from 'react-icons/pi';
 import { IoBagAddOutline } from 'react-icons/io5';
 import { useRecoilState } from 'recoil';
 import { cartListState } from '../../state';
+import { LIGHTGRAY } from '../../css/theme';
 
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -94,7 +95,7 @@ const Num = styled.div``;
 const Img = styled.img`
   width: 284px;
   height: 284px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid ${LIGHTGRAY};
 `;
 const Name = styled.div``;
 const Desc = styled.div``;
