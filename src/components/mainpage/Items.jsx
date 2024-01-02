@@ -6,8 +6,8 @@ import items from '../../data/items.json';
 const Items = () => {
   return (
     <ItemsContainer>
-      {items.map((item) => (
-        <Item item={item} />
+      {items.map((item, index) => (
+        <Item key={index} item={item} />
       ))}
     </ItemsContainer>
   );
