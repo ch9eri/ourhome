@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { FiPlus } from 'react-icons/fi';
 import { PiEquals } from 'react-icons/pi';
-import { totalPriceState } from '../../state';
+import { cartListState } from '../../state';
 
 const Total = () => {
-  const [total, setTotal] = useRecoilState(totalPriceState);
+  const [total, setTotal] = useState(0); //총 금액
+  const [cartList, setCartList] = useRecoilState(cartListState);
   const DelFee = total >= 30000 ? 0 : 3000; //배송비
+
+  useEffect(() => {
+    setTotal(0);
+    let totalP = 0;
+    cartList.forEach((item) => {
+      totalP += item.price * item.quantity;
+    });
+    setTotal(totalP);
+  }, [cartList]);
+
   return (
     <TotalContainer>
       <PriceText>총 금액</PriceText>
-      <PriceNum>{total}원</PriceNum>
+      <PriceNum>{total.toLocaleString('ko-KR')}원</PriceNum>
       <FiPlus size={30} className="char" />
       <PriceText>배송비</PriceText>
       <PriceNum>{DelFee.toLocaleString('ko-KR')}원</PriceNum>
@@ -28,7 +39,6 @@ const TotalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid gray;
   .char {
     margin: 0px 10px;
     color: gray;

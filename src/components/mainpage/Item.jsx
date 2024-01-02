@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PiShoppingCartBold, PiHeartBold } from 'react-icons/pi';
 import { IoBagAddOutline } from 'react-icons/io5';
+import { useRecoilState } from 'recoil';
+import { cartListState } from '../../state';
 
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useRecoilState(cartListState);
 
   useEffect(() => {
     console.log(cartList);
@@ -35,7 +37,13 @@ const Item = ({ item }) => {
       // 처음 추가(기존 리스트에 존재하지 않을 때)
       setCartList((prevCartList) => [
         ...prevCartList,
-        { id: item.id, quantity: 1 },
+        {
+          id: item.id,
+          quantity: 1,
+          price: item.price,
+          src: item.src,
+          name: item.name,
+        },
       ]);
     }
   };
@@ -59,7 +67,7 @@ const Item = ({ item }) => {
       <Img src={item.src} />
       <Name>{item.name}</Name>
       <Desc>{item.desc}</Desc>
-      <Price>{item.price}</Price>
+      <Price>{item.price.toLocaleString('ko-KR')}원</Price>
     </ItemContainer>
   );
 };

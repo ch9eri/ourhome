@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import CartItem from '../components/listpage/CartItem';
 import Total from '../components/listpage/Total';
+import { useRecoilState } from 'recoil';
+import { cartListState } from '../state';
 
 const ListPage = () => {
+  const [cartList, setCartList] = useRecoilState(cartListState);
+
   return (
     <Layout>
       <Title>장바구니</Title>
       <SubContainer>
         <LongSubTitle>상품명</LongSubTitle>
-        <SubTitle>구매가</SubTitle>
         <SubTitle>수량</SubTitle>
         <SubTitle>금액</SubTitle>
       </SubContainer>
-      <CartItem />
+      {cartList.map((citem, index) => (
+        <CartItem key={index} citem={citem} />
+      ))}
       <Total />
     </Layout>
   );
@@ -32,16 +37,16 @@ const SubContainer = styled.div`
   height: 70px;
   background-color: #fafafa;
   border-top: 1px solid black;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #d9d9d9;
 `;
 const SubTitle = styled.div`
-  width: 136px;
+  width: 20%;
   text-align: center;
   font-size: 14px;
 `;
 
 const LongSubTitle = styled(SubTitle)`
-  width: 560px;
+  width: 60%;
 `;
 
 export default ListPage;

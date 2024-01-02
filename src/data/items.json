@@ -3,28 +3,28 @@
     "id": 1,
     "name": "진한 사골곰탕 300g",
     "desc": "100% 사골로 고은 진한 사골곰탕",
-    "price": "880원",
+    "price": 880,
     "src": "https://mall.ourhome.co.kr//attach_file/20201118/C4A1610E7468407FA935CBF8DE2164DF.jpg"
   },
   {
     "id": 2,
-    "name": "[온더고] 전주식 소고기 오색비빔밥 310g",
+    "name": "전주식 소고기 오색비빔밥 310g",
     "desc": "오색 가득 토핑 듬뿍, 소고기, 한국의 맛",
-    "price": "5680원",
+    "price": 5680,
     "src": "https://mall.ourhome.co.kr//attach_file/20230801/A6EC3A469F83421C902148D73239D474.jpg"
   },
   {
     "id": 3,
-    "name": "[온더고] 더블치즈 차돌깍두기 300g",
+    "name": "더블치즈 차돌깍두기 300g",
     "desc": "치즈 듬뿍,모짜렐라, 통차돌, 국내산 깍두기",
-    "price": "5680원",
+    "price": 5680,
     "src": "https://mall.ourhome.co.kr//attach_file/20230801/FAF9E75293614D50A076E5AAB70075A1.jpg"
   },
   {
     "id": 4,
-    "name": "[온더고] 숯불향 우삼겹불고기덮밥 290g",
+    "name": "숯불향 우삼겹불고기덮밥 290g",
     "desc": "저온 숙성 불고기, 오븐 구이 야채, 한국의 맛",
-    "price": "5680원",
+    "price": 5680,
     "src": "https://mall.ourhome.co.kr//attach_file/20230801/B0DE983F53774F89A78CC1DEA8A66F32.jpg"
   }
 ]
