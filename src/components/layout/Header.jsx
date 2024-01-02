@@ -6,12 +6,15 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
+  const naviToHome = () => {
+    navigate('/');
+  };
   const naviToList = () => {
     navigate('/list');
   };
   return (
     <HeaderContainer>
-      <LogoImg src={Logo} />
+      <LogoImg src={Logo} onClick={naviToHome} />
       <CartIcon size={40} onClick={naviToList} />
     </HeaderContainer>
   );
@@ -22,6 +25,7 @@ const HeaderContainer = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
+  background-color: blue;
 `;
 
 const LogoImg = styled.img`
