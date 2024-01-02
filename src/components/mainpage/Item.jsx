@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { PiShoppingCart, PiHeart } from 'react-icons/pi';
 import { IoBagAddOutline } from 'react-icons/io5';
@@ -9,17 +9,20 @@ import { LIGHTGRAY, DARKGRAY } from '../../css/theme';
 const Item = ({ item }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [cartList, setCartList] = useRecoilState(cartListState);
-  const [,setIsModalOpen] = useRecoilState(isModalOpenState);
+  const [, setIsModalOpen] = useRecoilState(isModalOpenState);
 
   const handleMouseOver = () => {
+    // 버튼에 마우스 hover시
     setIsHovering(true);
   };
 
   const handleMouseOut = () => {
+    // 버튼에서 마우스 나갈 때
     setIsHovering(false);
   };
 
   const onAddCart = (item) => {
+    //장바구니 버튼 클릭할 때
     console.log(cartList);
     if (cartList.find((el) => el.id === item.id)) {
       // 기존 리스트에 존재할 때

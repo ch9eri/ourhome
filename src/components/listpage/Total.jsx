@@ -7,10 +7,11 @@ import { cartListState } from '../../state';
 
 const Total = () => {
   const [total, setTotal] = useState(0); //총 금액
-  const [cartList, setCartList] = useRecoilState(cartListState);
+  const [cartList] = useRecoilState(cartListState);
   const DelFee = total >= 30000 ? 0 : 3000; //배송비
 
   useEffect(() => {
+    //페이지 렌더링되거나 cartList 변화하면 장바구니 총 금액 계산
     setTotal(0);
     let totalP = 0;
     cartList.forEach((item) => {

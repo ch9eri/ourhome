@@ -11,6 +11,7 @@ const MainPage = () => {
 
   return (
     <>
+      {/* 모달창 열리면 가장 상단에 표시 */}
       {isModalOpen && <Modal />}
       <Layout>
         <Title>카테고리 베스트</Title>

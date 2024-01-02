@@ -4,6 +4,7 @@ import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
+    // 반복되는 화면 구성을 위한 레이아웃 컴포넌트 생성
     <Background>
       <Header />
       <Children>{children}</Children>

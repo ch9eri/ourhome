@@ -5,9 +5,10 @@ import { useRecoilState } from 'recoil';
 import { LIGHTGRAY } from '../../css/theme';
 
 const CartItem = ({ citem }) => {
-  const [,setCartList] = useRecoilState(cartListState);
+  const [, setCartList] = useRecoilState(cartListState);
 
   const onHandlePlus = () => {
+    // 상품 개수 추가 버튼 클릭시
     setCartList((prevCartList) =>
       prevCartList.map((item) =>
         item.id === citem.id ? { ...item, quantity: item.quantity + 1 } : item
@@ -16,6 +17,7 @@ const CartItem = ({ citem }) => {
   };
 
   const onHandleMinus = () => {
+    // 상품 개수 감소 버튼 클릭시
     setCartList((prevCartList) =>
       prevCartList.map((item) =>
         item.id === citem.id && item.quantity > 0
